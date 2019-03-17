@@ -929,9 +929,69 @@ Das Programm eignet sich besonders gut für den Fall, wenn man einer Übertragun
 \chapter{Paranoia Text Encryption - Praxis}
 Da das Programm ziemlich leicht ist und es nur wenige, jedoch nützliche Funktionen bietet, ist das Programm sehr einfach zu überschauen. Trotzdem werden kurze Anleitungen gegeben, wie gewisse Vorgänge vollzogen werden sollten.
 
-\section{Verschlüsselung eines Textes (TODO)}
+\section{Verschlüsselung eines Textes}
+Um einen Text zu verschlüsseln, muss zunächst ein Passwort gewählt werden. Dieses Passwort sollte natürlich so sicher wie möglich sein, damit es nicht einfach zu knacken ist.
 
-\section{Entschlüsselung eines Textes (TODO)}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte1.png}
+\caption{Passwort eingeben}
+\label{pte1}
+\end{center}
+\end{figure}
+
+\noindent Jetzt, wo das Passwort eingegeben wurde, kann der zu verschlüsselnde Text in das obere Feld eingegeben werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte2.png}
+\caption{Zu verschlüsselnden Text eingeben}
+\label{pte2}
+\end{center}
+\end{figure}
+
+\noindent Um den Text zu verschlüsseln, muss der Encrypt-Knopf gedrückt werden. Das Programm könnte je nach Textlänge etwas länger brauchen. Wenn es fertig ist, erscheint der verschlüsselte Text im unteren Feld und kann nun kopiert werden. Es ist kein Fehlverhalten des Programms, dass bei erneutem Drücken des Knopfes ein anderer verschlüsselter Text erscheint. Das hängt damit zusammen, dass der Text nicht einfach nur verschlüsselt wird, sondern ebenfalls ein kryptografisches Salt hinzugefügt wird.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte3.png}
+\caption{Text verschlüsseln}
+\label{pte3}
+\end{center}
+\end{figure}
+
+\section{Entschlüsselung eines Textes}
+Um einen verschlüsselten Text zu entschlüsseln, muss zunächst das Passwort eingegeben werden, das verwendet wurde, um den Text zu verschlüsseln.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte1.png}
+\caption{Passwort eingeben}
+\label{pte4}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent Nachdem das Passwort eingegeben wurde, kann jetzt der zu entschlüsselnde Text in das untere Feld eingefügt werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte4.png}
+\caption{Zu entschlüsselnden Text eingeben}
+\label{pte5}
+\end{center}
+\end{figure}
+
+\noindent Damit der Text entschlüsselt wird, muss nun der Decrypt-Knopf gedrückt werden. Das Entschlüsseln dauert je nach Textlänge etwas länger. Wenn das Programm fertig ist, erscheint der entschlüsselte Text im oberen Textfeld und kann wieder gelesen werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=220pt]{media/pte5.png}
+\caption{Text entschlüsseln}
+\label{pte6}
+\end{center}
+\end{figure}
 
 \section{Verstecken und verschlüsseln eines Textes in einem Bild (TODO)}
 
