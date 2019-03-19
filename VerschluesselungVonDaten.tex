@@ -671,7 +671,135 @@ Sollte der Wunsch bestehen das Betriebssystem wieder in den alten Zustand zu bri
 \end{figure}
 
 \section{Verstecktes Betriebssystem verschlüsseln (MBR) (TODO)}
-Sollte es nicht reichen, das Betriebssystem zu verschlüsseln, so muss ein verstecktes Betriebssystem her. Hierbei wird jedoch zwischen zwei Voraussetzungen unterschieden. Diese sind ein BIOS oder ein UEFI System. Um genauer so sein, MBR oder GPT.
+Sollte es nicht reichen, das Betriebssystem zu verschlüsseln, so muss ein verstecktes Betriebssystem her. Hierbei wird jedoch zwischen zwei Voraussetzungen unterschieden. Diese sind ein BIOS oder ein UEFI System. Um genauer so sein, MBR oder GPT. Anders, als bei der einfachen Verschlüsselung des Betriebssystems, muss hier bereits während der Installation von Windows auf etwas geachtet werden. Damit der Vorgang funktioniert, muss sicher gestellt werden, dass sich Windows auf der ersten Partition der Festplatte befinden.\\
+
+\noindent Da während des Windows-Setups eine System Partition erstellt wird und diese automatisch die erste Partition einnimmt, muss hier etwas getrickst werden. Zuerst wird wie gewohnt die gewünschte Festplatte ausgewählt und eine neue Partition erstellt.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb1.png}
+\caption{Neue Partition anlegen}
+\label{hb1}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent Wenn das erledigt ist, kann man die problematische System-Partition sehen. Nun beginnt der Trick, um Windows auf der ersten Partition zu installieren. Es muss jetzt die zweite Partition wieder gelöscht werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb2.png}
+\caption{Zweite Partition löschen}
+\label{hb2}
+\end{center}
+\end{figure}
+
+\noindent Nun, da die zweite Partition gelöscht wurde, kann die erste Partition erweitert werden und bekommt den nötigen Speicherplatz. Es darf jedoch nicht der komplette Speicherplatz verwendet werden, da für das verstecke Betriebssystem eine zweite Partition benötigt wird. Das Windows-Setup formatiert die Festplatte standardmäßig im NTFS Format, was bedeutet, dass die zweite Partition 110 Prozent größer sein muss, als die erste Partition. Das ist etwa das 2,1-Fache.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb3.png}
+\caption{Partitionen erstellen}
+\label{hb3}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent Mit einem Klick auf \textbf{Weiter} kann jetzt wie gewohnt die Windows-Installation gestartet werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb4.png}
+\caption{Installation starten}
+\label{hb4}
+\end{center}
+\end{figure}
+
+\noindent Wenn das Betriebssystem fertig installiert wurde und natürlich auch VeraCrypt auf dem Rechner vorhanden ist, muss VeraCrypt gestartet werden. Dort kann der Vorgang mit einem Klick auf \textbf{Volume erstellen} gestartet werden. Als nächstes wird \textbf{System-Partition bzw. System-Laufwerk verschlüsseln} ausgewählt und auch das bestätigt. Nun ist der wichtige Punkt gekommen, bei dem das versteckte Betriebssystem ins Spiel kommt. Hier wird \textbf{Versteckt} gewählt und auf \textbf{Weiter} geklickt.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb5.png}
+\caption{Art der System-Verschlüsselung}
+\label{hb5}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent Als nächstes folgt ein Informationstext, welcher mit \textbf{Weiter} übersprungen werden kann. Sämtliche Informationen in diesem Text werden im Laufe der Anleitung ebenfalls gegeben, wodurch der Text nicht so wichtig ist. Nach der Bestätigung erscheint ein Fenster, das darüber informiert, dass das aktuelle Betriebssystem dazu dient kopiert zu werden, damit aus diesem Betriebssystem das versteckte Betriebssystem wird. Das öffentliche Betriebssystem wird an einem späteren Punkt noch einmal neu installiert. Die komplette Prozedur umfasst also zwei komplette Windows-Installationen. \\
+
+\noindent Nach weiteren Warnmeldungen kommt ggf. eine Meldung, dass eine Auslagerungsdatei auf einer Nicht-Systempartition vorhanden sei. Wenn diese Meldung mit \textbf{Ja} bestätigt wird, kümmert sich VeraCrypt um alles und stellt das Betriebssystem so ein, dass alles funktioniert. In Folge dessen startet der Rechner neu, damit diese Änderungen übernommen werden können. \\
+
+\noindent Wenn das alles erledigt ist, muss VeraCrypt erneut gestartet werden und die vergangenen Schritte so weit wiederholt werden, bis die Auswahl der Anzahl der Betriebssysteme zu sehen ist. Im Rahmen dieser Anleitung wird davon ausgegangen, dass Windows das einzige Betriebssystem ist und daher wird die Option \textbf{Ein Betriebssystem} gewählt und mit \textbf{Weiter} bestätigt.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/oscount.png}
+\caption{Anzahl Betriebssysteme}
+\label{hboscount}
+\end{center}
+\end{figure}
+
+\noindent Es folgt eine Meldung, dass das Betriebssystem aktiviert worden sein muss, damit es zu keinen Sicherheitsrisiken kommen kann. Wenn das der Fall ist, kann der Dialog mit \textbf{Ja} bestätigt werden. \\
+
+\noindent Nach der Meldung beginnt die Erstellung des äußeren Volumes. Dieses Volume kann später vom öffentlichen Betriebssystem aus geöffnet werden und dient als Tarnung für das versteckte Betriebssystem. Das ist nötig, da sich das versteckte Betriebssystem auf der zweiten Partition befindet und von Windows als Laufwerk angezeigt wird. Es kann also gesagt werden, dass diese Partition nur zur Verschlüsselung von wichtigen Daten existiert. In Wirklichkeit sollten sich auf diesem Volume keine wichtigen Daten befinden, da diese im schlimmsten Fall herausgerückt werden müssen. \\
+
+\noindent Dieser Vorgang wird nicht weiter erklärt, da die Erstellung eines Volumes bereits vorher erklärt wurde. Das Passwort lautet im Beispiel \textbf{'asdf'}. Das Passwort wird mit Absicht genannt, um die Eingabe zum späteren Zeitpunkt eindeutig zu machen.
+
+\newpage 
+
+\noindent Wenn die Erstellung des äußeren Volumes vollständig ist, beginnt die Erstellung des versteckten Volumes. In diesem Volume wird sich später das versteckte Betriebssystem befinden. Auch dieser Vorgang ist bereits bekannt und wird nicht weiter erläutert. Es ist bei der Erstellung jedoch zu beachten, dass die selben Werte zur Verschlüsselung verwendet werden, wie beim öffentlichen Betriebssystem, welches zu späterem Zeitpunkt verschlüsselt wird. Es ist zu empfehlen sich den Verschlüsselungsalgorithmus und die Hashfunktion zu notieren. Das verwendete Passwort für das versteckte Volume lautet \textbf{'4321'}. \\
+
+\noindent Nach der Erstellung des versteckten Volumes kann mit dem Klonen des Betriebssystem begonnen werden. Dafür muss nur der \textbf{Start}-Knopf gedrückt werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb6.png}
+\caption{Betriebssystem klonen}
+\label{hb6}
+\end{center}
+\end{figure}
+
+\noindent Nach dem Fenster erscheinen noch zwei Meldungen, die darüber informieren, dass der VeraCrypt Bootloader in englisch ist und dass das System nun neu gestartet werden muss. Nach dem Neustart erscheint der VeraCrypt Bootloader, in dem das Passwort des versteckten Betriebssystems eingegeben werden muss. In diesem Fall ist es \textbf{'4321'}. Insofern kein PIM gesetzt wurde, kann dieser frei gelassen werden und einfach mit Enter bestätigt werden. Es beginnt nun der Klonvorgang des Betriebssystems. \\
+
+\newpage
+
+\noindent Sobald der Vorgang abgeschlossen ist, muss noch einmal das Passwort des versteckten Volumes (\textbf{'4321'}) eingegeben werden. Nach der Verifizierung startet Windows wieder normal. Aktuell ist das versteckte Betriebssystem geladen. Es erscheint eine Meldung und im Hintergrund das VeraCrypt Fenster, welche beide bestätigt werden können. Es folgend noch weitere Informationstexte, die alle mit \textbf{Weiter} bestätigt werden können. Es erscheint ein Fenster über das sichere Löschen der alten Daten. Die Gutmann Methode ist eine Altbewährte Methode der sicheren Löschung von Daten, doch im Beispiel wird \textbf{1-Durchgang (Zufalls Daten)} gewählt, um den Vorgang zu beschleunigen. Im wirklichen Einsatz sollten Daten wirklich sicher gelöscht werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb7.png}
+\caption{Sicher Löschen}
+\label{hb7}
+\end{center}
+\end{figure}
+
+\noindent Das folgende Fenster berichtet über den Status der Löschung. Die Löschung selbst kann mit einem Klick auf den \textbf{Löschen}-Knopf gestartet werden. Es erscheint ein Fenster, welches dazu dient zufällig Daten für den Vorgang zu sammeln, hier sollte die Maus für einen längeren Zeitraum so zufällig wie möglich bewegt werden und der Dialog mit \textbf{Fortsetzen} bestätigt werden. \\
+
+\noindent Nach der erfolgreichen Löschung der Daten ist der Balken voll und das Fenster kann mit dem \textbf{Beenden}-Knopf geschlossen werden. Jetzt ist der Zeitpunkt gekommen, an dem das Betriebssystem ein zweites mal installiert werden muss. Diesmal handelt es sich jedoch um das Köder-Betriebssystem, welches standardmäßig verwendet werden sollte. \\
+
+\newpage
+
+\noindent Das Windows-Setup wird genau so durchgeführt, wie beim ersten mal, doch diesmal dürfen die Partitionen nicht neu erstellt, beziehungsweise verändert werden. Es wird einfach die erste Partition ausgewählt und die Installation mit \textbf{Weiter} gestartet.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/hb8.png}
+\caption{Windows installieren}
+\label{hb8}
+\end{center}
+\end{figure}
+
+\noindent Nachdem die Installation abgeschlossen ist, muss erneut das Betriebssystem eingerichtet und VeraCrypt installiert werden. Sind diese Vorbereitungen wieder getroffen, kann VeraCrypt gestartet werden. Es muss wieder der \textbf{Volume Erstellen}-Knopf gedrückt werden. Dann muss die Option \textbf{System-Partition bzw. System-Laufwerk verschlüsseln} gewählt werden und mit dem \textbf{Weiter}-Knopf bestätigt werden. Diesmal muss als Art der System-Verschlüsselung die Option \textbf{Normal} gewählt werden. Im nächsten Schritt muss die Option \textbf{Die Windows System-Partition verschlüsseln} gewählt und ebenfalls mit \textbf{Weiter} bestätigt werden. Die Anzahl der Betriebssysteme beschränkt sich in dieser Anleitung auf ein Betriebssystem, weshalb auch das ausgewählt wurde. Die nachfolgenden Verschlüsselungseinstellungen müssen mit denen des versteckten Betriebssystems übereinstimmen. \\
+
+\noindent Das nun zu wählende Passwort wird dafür genutzt beim Start des Rechners in das Köder-System zu gelangen. Als Beispiel wird \textbf{'1234'} genommen. Die weiteren Schritte sind der eine einfache Systemverschlüsselung sehr ähnlich und werden deshalb übersprungen. \\
+
+\noindent Wenn der Rechner beim Neustart angekommen ist, muss dort zunächst das Köder-Passwort (\textbf{'1234'}) eingegeben werden. Es könnte auch schon das Passwort des versteckten Betriebssystems eingegeben werden, doch das Köder-System ist noch nicht verschlüsselt, was erst einmal erledigt werden muss. \\
+
+\noindent Wenn der Verschlüsselungsvorgang abgeschlossen ist, wurde erfolgreich ein System mit zwei Betriebssystemen eingerichtet. Wenn der Rechner nun neu gestartet wird, erscheint die typische Abfrage nach dem Passwort. Wenn hier das Passwort der Köder-Systems (\textbf{'1234'}) eingegeben wird, so wird das Köder-System gestartet und wenn das Passwort des versteckten Betriebssystems (\textbf{'4321'}) eingegeben wird, startet das versteckte Betriebssystem.
 
 \section{Verstecktes Betriebssystem verschlüsseln (GPD) (TODO)}
 
