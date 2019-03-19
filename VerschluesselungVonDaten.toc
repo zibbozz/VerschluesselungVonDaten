@@ -1,70 +1,67 @@
 \babel@toc {german}{}
-\contentsline {chapter}{\numberline {1}Einleitung}{1}% 
-\contentsline {part}{\numberline {I}VeraCrypt}{2}% 
-\contentsline {chapter}{\numberline {2}VeraCrypt - Theorie}{3}% 
-\contentsline {section}{\numberline {2.1}Was ist VeraCrypt?}{3}% 
-\contentsline {section}{\numberline {2.2}Ben\IeC {\"o}tigte Rechte}{3}% 
-\contentsline {section}{\numberline {2.3}Verschl\IeC {\"u}sselungsalgorithmen}{3}% 
-\contentsline {section}{\numberline {2.4}Hardwarebeschleunigung}{4}% 
-\contentsline {section}{\numberline {2.5}Hash-Algorithmen}{5}% 
-\contentsline {section}{\numberline {2.6}Der Random Number Generator}{5}% 
-\contentsline {section}{\numberline {2.7}Sichere Passw\IeC {\"o}rter}{5}% 
-\contentsline {subsection}{\numberline {2.7.1}Top 10 der meistverwendeten Passw\IeC {\"o}rter}{6}% 
-\contentsline {subsection}{\numberline {2.7.2}Die Wahl eines guten Passworts}{6}% 
-\contentsline {subsection}{\numberline {2.7.3}Entropie eines Passworts}{7}% 
-\contentsline {subsection}{\numberline {2.7.4}Dauer bis ein Passwort geknackt wird}{7}% 
-\contentsline {section}{\numberline {2.8}PIM}{8}% 
-\contentsline {section}{\numberline {2.9}Keyfiles}{8}% 
-\contentsline {section}{\numberline {2.10}Glaubhafte Abstreitbarkeit}{8}% 
-\contentsline {section}{\numberline {2.11}Sicherheitsanforderungen und Vorsichtsma\IeC {\ss }nahmen}{9}% 
-\contentsline {subsection}{\numberline {2.11.1}Datenlecks}{9}% 
-\contentsline {subsection}{\numberline {2.11.2}Auslagerungsdatei}{10}% 
-\contentsline {subsection}{\numberline {2.11.3}Ruhezustandsdatei}{10}% 
-\contentsline {subsection}{\numberline {2.11.4}Speicherabbilddateien}{10}% 
-\contentsline {subsection}{\numberline {2.11.5}Physische Sicherheit}{10}% 
-\contentsline {subsection}{\numberline {2.11.6}Malware}{10}% 
-\contentsline {subsection}{\numberline {2.11.7}Mehrere Benutzer an einem Rechner}{11}% 
-\contentsline {subsection}{\numberline {2.11.8}Wahl eines starken Passworts}{11}% 
-\contentsline {subsection}{\numberline {2.11.9}Schl\IeC {\"u}sseldateien}{11}% 
-\contentsline {subsection}{\numberline {2.11.10}Benennung des Containers}{11}% 
-\contentsline {chapter}{\numberline {3}VeraCrypt - Praxis}{12}% 
-\contentsline {section}{\numberline {3.1}Sprache umstellen}{12}% 
-\contentsline {section}{\numberline {3.2}Einen Container erstellen}{13}% 
-\contentsline {section}{\numberline {3.3}Eine Containerdatei einbinden und trennen}{17}% 
-\contentsline {section}{\numberline {3.4}Ein verstecktes Volume erstellen}{19}% 
-\contentsline {section}{\numberline {3.5}Eine Festplatte/USB-Stick verschl\IeC {\"u}sseln}{22}% 
-\contentsline {section}{\numberline {3.6}Das Betriebssystem verschl\IeC {\"u}sseln}{24}% 
-\contentsline {section}{\numberline {3.7}Das Betriebssystem dauerhaft entschl\IeC {\"u}sseln}{30}% 
-\contentsline {section}{\numberline {3.8}Verstecktes Betriebssystem verschl\IeC {\"u}sseln (MBR) (TODO)}{31}% 
-\contentsline {section}{\numberline {3.9}Verstecktes Betriebssystem verschl\IeC {\"u}sseln (GPD) (TODO)}{38}% 
-\contentsline {chapter}{\numberline {4}VeraCrypt - Anhang}{39}% 
-\contentsline {section}{\numberline {4.1}Ben\IeC {\"o}tigte Zeit um ein Passwort zu knacken}{39}% 
-\contentsline {part}{\numberline {II}KeePass 2}{40}% 
-\contentsline {chapter}{\numberline {5}KeePass 2 - Theorie}{41}% 
-\contentsline {section}{\numberline {5.1}Was ist KeePass?}{41}% 
-\contentsline {section}{\numberline {5.2}Vor- und Nachteile von Passwortmanagern}{41}% 
-\contentsline {section}{\numberline {5.3}Two-Channel Auto-Type Obfuscation}{42}% 
-\contentsline {section}{\numberline {5.4}Verschl\IeC {\"u}sselungsalgorithmen}{42}% 
-\contentsline {section}{\numberline {5.5}Passwort Generator Muster}{43}% 
-\contentsline {chapter}{\numberline {6}KeePass 2 - Praxis}{44}% 
-\contentsline {section}{\numberline {6.1}Sprache umstellen}{44}% 
-\contentsline {section}{\numberline {6.2}Eine Datenbank erstellen}{45}% 
-\contentsline {section}{\numberline {6.3}Einen Eintrag hinzuf\IeC {\"u}gen}{49}% 
-\contentsline {section}{\numberline {6.4}Daten kopieren und Auto-Type ausf\IeC {\"u}hren}{52}% 
-\contentsline {section}{\numberline {6.5}N\IeC {\"u}tzliche Einstellungen (TODO)}{53}% 
-\contentsline {part}{\numberline {III}Paranoia Text Encryption}{54}% 
-\contentsline {chapter}{\numberline {7}Paranoia Text Encryption - Theorie}{55}% 
-\contentsline {section}{\numberline {7.1}Was ist Paranoia Text Encryption?}{55}% 
-\contentsline {section}{\numberline {7.2}Einsatzm\IeC {\"o}glichkeiten}{55}% 
-\contentsline {chapter}{\numberline {8}Paranoia Text Encryption - Praxis}{56}% 
-\contentsline {section}{\numberline {8.1}Verschl\IeC {\"u}sselung eines Textes}{56}% 
-\contentsline {section}{\numberline {8.2}Entschl\IeC {\"u}sselung eines Textes}{57}% 
-\contentsline {section}{\numberline {8.3}Verstecken und verschl\IeC {\"u}sseln eines Textes in einem Bild (TODO)}{58}% 
-\contentsline {section}{\numberline {8.4}Extrahieren und entschl\IeC {\"u}sseln eines Textes aus einem Bild (TODO)}{58}% 
-\contentsline {part}{\numberline {IV}S.S.E. File Encryptor}{59}% 
-\contentsline {chapter}{\numberline {9}S.S.E. File Encryptor - Theorie}{60}% 
-\contentsline {section}{\numberline {9.1}Was ist S.S.E. File Encryptor?}{60}% 
-\contentsline {section}{\numberline {9.2}Sicherheitshinweise}{60}% 
-\contentsline {chapter}{\numberline {10}S.S.E. File Encryptor - Praxis}{61}% 
-\contentsline {section}{\numberline {10.1}Verschl\IeC {\"u}sselung einer Datei (TODO)}{61}% 
-\contentsline {section}{\numberline {10.2}Entschl\IeC {\"u}sselung einer Datei (TODO)}{61}% 
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}% 
+\contentsline {part}{\numberline {I}VeraCrypt}{2}{part.1}% 
+\contentsline {chapter}{\numberline {2}VeraCrypt - Theorie}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Was ist VeraCrypt?}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Ben\IeC {\"o}tigte Rechte}{3}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Verschl\IeC {\"u}sselungsalgorithmen}{3}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Hardwarebeschleunigung}{4}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Hash-Algorithmen}{5}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Der Random Number Generator}{5}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Sichere Passw\IeC {\"o}rter}{5}{section.2.7}% 
+\contentsline {subsection}{\numberline {2.7.1}Top 10 der meistverwendeten Passw\IeC {\"o}rter}{6}{subsection.2.7.1}% 
+\contentsline {subsection}{\numberline {2.7.2}Die Wahl eines guten Passworts}{6}{subsection.2.7.2}% 
+\contentsline {subsection}{\numberline {2.7.3}Entropie eines Passworts}{7}{subsection.2.7.3}% 
+\contentsline {subsection}{\numberline {2.7.4}Dauer bis ein Passwort geknackt wird}{7}{subsection.2.7.4}% 
+\contentsline {section}{\numberline {2.8}PIM}{8}{section.2.8}% 
+\contentsline {section}{\numberline {2.9}Keyfiles}{8}{section.2.9}% 
+\contentsline {section}{\numberline {2.10}Glaubhafte Abstreitbarkeit}{8}{section.2.10}% 
+\contentsline {section}{\numberline {2.11}Sicherheitsanforderungen und Vorsichtsma\IeC {\ss }nahmen}{9}{section.2.11}% 
+\contentsline {subsection}{\numberline {2.11.1}Datenlecks}{9}{subsection.2.11.1}% 
+\contentsline {subsection}{\numberline {2.11.2}Auslagerungsdatei}{10}{subsection.2.11.2}% 
+\contentsline {subsection}{\numberline {2.11.3}Ruhezustandsdatei}{10}{subsection.2.11.3}% 
+\contentsline {subsection}{\numberline {2.11.4}Speicherabbilddateien}{10}{subsection.2.11.4}% 
+\contentsline {subsection}{\numberline {2.11.5}Physische Sicherheit}{10}{subsection.2.11.5}% 
+\contentsline {subsection}{\numberline {2.11.6}Malware}{10}{subsection.2.11.6}% 
+\contentsline {subsection}{\numberline {2.11.7}Mehrere Benutzer an einem Rechner}{11}{subsection.2.11.7}% 
+\contentsline {subsection}{\numberline {2.11.8}Wahl eines starken Passworts}{11}{subsection.2.11.8}% 
+\contentsline {subsection}{\numberline {2.11.9}Schl\IeC {\"u}sseldateien}{11}{subsection.2.11.9}% 
+\contentsline {subsection}{\numberline {2.11.10}Benennung des Containers}{11}{subsection.2.11.10}% 
+\contentsline {chapter}{\numberline {3}VeraCrypt - Praxis}{12}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Sprache umstellen}{12}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Einen Container erstellen}{13}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Eine Containerdatei einbinden und trennen}{17}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Ein verstecktes Volume erstellen}{19}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Eine Festplatte/USB-Stick verschl\IeC {\"u}sseln}{22}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Das Betriebssystem verschl\IeC {\"u}sseln}{24}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Das Betriebssystem dauerhaft entschl\IeC {\"u}sseln}{30}{section.3.7}% 
+\contentsline {section}{\numberline {3.8}Verstecktes Betriebssystem verschl\IeC {\"u}sseln (MBR)}{31}{section.3.8}% 
+\contentsline {chapter}{\numberline {4}VeraCrypt - Anhang}{38}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Ben\IeC {\"o}tigte Zeit um ein Passwort zu knacken}{38}{section.4.1}% 
+\contentsline {part}{\numberline {II}KeePass 2}{39}{part.2}% 
+\contentsline {chapter}{\numberline {5}KeePass 2 - Theorie}{40}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Was ist KeePass?}{40}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Vor- und Nachteile von Passwortmanagern}{40}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Two-Channel Auto-Type Obfuscation}{41}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Verschl\IeC {\"u}sselungsalgorithmen}{41}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Passwort Generator Muster}{42}{section.5.5}% 
+\contentsline {chapter}{\numberline {6}KeePass 2 - Praxis}{43}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Sprache umstellen}{43}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Eine Datenbank erstellen}{44}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Einen Eintrag hinzuf\IeC {\"u}gen}{48}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Daten kopieren und Auto-Type ausf\IeC {\"u}hren}{51}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}N\IeC {\"u}tzliche Einstellungen}{52}{section.6.5}% 
+\contentsline {part}{\numberline {III}Paranoia Text Encryption}{53}{part.3}% 
+\contentsline {chapter}{\numberline {7}Paranoia Text Encryption - Theorie}{54}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Was ist Paranoia Text Encryption?}{54}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Einsatzm\IeC {\"o}glichkeiten}{54}{section.7.2}% 
+\contentsline {chapter}{\numberline {8}Paranoia Text Encryption - Praxis}{55}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Verschl\IeC {\"u}sselung eines Textes}{55}{section.8.1}% 
+\contentsline {section}{\numberline {8.2}Entschl\IeC {\"u}sselung eines Textes}{57}{section.8.2}% 
+\contentsline {part}{\numberline {IV}S.S.E. File Encryptor}{59}{part.4}% 
+\contentsline {chapter}{\numberline {9}S.S.E. File Encryptor - Theorie}{60}{chapter.9}% 
+\contentsline {section}{\numberline {9.1}Was ist S.S.E. File Encryptor?}{60}{section.9.1}% 
+\contentsline {section}{\numberline {9.2}Sicherheitshinweise}{60}{section.9.2}% 
+\contentsline {chapter}{\numberline {10}S.S.E. File Encryptor - Praxis}{61}{chapter.10}% 
+\contentsline {section}{\numberline {10.1}Verschl\IeC {\"u}sselung einer Datei}{61}{section.10.1}% 
+\contentsline {section}{\numberline {10.2}Entschl\IeC {\"u}sselung einer Datei}{63}{section.10.2}% 

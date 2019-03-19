@@ -7,6 +7,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{bookmark}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
 \author{Sebastian Wittmann}
@@ -26,9 +27,9 @@
 \vspace{3cm}
 {\fontsize{20.74pt}{20.74pt}\selectfont Sebastian Wittmann} \par
 \vspace{2cm}
-{\fontsize{14pt}{14pt}\selectfont Version 0.6.0}\par
+{\fontsize{14pt}{14pt}\selectfont Version 1.0.0}\par
 \vspace{9cm}
-{\fontsize{14pt}{14pt}\selectfont 17.03.2019}
+{\fontsize{14pt}{14pt}\selectfont 19.03.2019}
 \noindent\rule{470pt}{0.4pt}
 \end{center}
 \end{titlepage}
@@ -670,8 +671,10 @@ Sollte der Wunsch bestehen das Betriebssystem wieder in den alten Zustand zu bri
 \end{center}
 \end{figure}
 
-\section{Verstecktes Betriebssystem verschlüsseln (MBR) (TODO)}
-Sollte es nicht reichen, das Betriebssystem zu verschlüsseln, so muss ein verstecktes Betriebssystem her. Hierbei wird jedoch zwischen zwei Voraussetzungen unterschieden. Diese sind ein BIOS oder ein UEFI System. Um genauer so sein, MBR oder GPT. Anders, als bei der einfachen Verschlüsselung des Betriebssystems, muss hier bereits während der Installation von Windows auf etwas geachtet werden. Damit der Vorgang funktioniert, muss sicher gestellt werden, dass sich Windows auf der ersten Partition der Festplatte befinden.\\
+\section{Verstecktes Betriebssystem verschlüsseln (MBR)}
+Sollte es nicht reichen, das Betriebssystem zu verschlüsseln, so muss ein verstecktes Betriebssystem her. Hierbei wird jedoch zwischen zwei Voraussetzungen unterschieden. Diese sind ein BIOS oder ein UEFI System. Um genauer so sein, MBR oder GPT. \\
+
+\noindent Aktuell unterstützt VeraCrypt versteckte Betriebssysteme nur auf Systemen, die im BIOS Modus laufen, beziehungsweise ein MBR besitzen. Anders, als bei der einfachen Verschlüsselung des Betriebssystems, muss hier bereits während der Installation von Windows auf etwas geachtet werden. Damit der Vorgang funktioniert, muss sicher gestellt werden, dass sich Windows auf der ersten Partition der Festplatte befinden.\\
 
 \noindent Da während des Windows-Setups eine System Partition erstellt wird und diese automatisch die erste Partition einnimmt, muss hier etwas getrickst werden. Zuerst wird wie gewohnt die gewünschte Festplatte ausgewählt und eine neue Partition erstellt.
 
@@ -800,8 +803,6 @@ Sollte es nicht reichen, das Betriebssystem zu verschlüsseln, so muss ein verst
 \noindent Wenn der Rechner beim Neustart angekommen ist, muss dort zunächst das Köder-Passwort (\textbf{'1234'}) eingegeben werden. Es könnte auch schon das Passwort des versteckten Betriebssystems eingegeben werden, doch das Köder-System ist noch nicht verschlüsselt, was erst einmal erledigt werden muss. \\
 
 \noindent Wenn der Verschlüsselungsvorgang abgeschlossen ist, wurde erfolgreich ein System mit zwei Betriebssystemen eingerichtet. Wenn der Rechner nun neu gestartet wird, erscheint die typische Abfrage nach dem Passwort. Wenn hier das Passwort der Köder-Systems (\textbf{'1234'}) eingegeben wird, so wird das Köder-System gestartet und wenn das Passwort des versteckten Betriebssystems (\textbf{'4321'}) eingegeben wird, startet das versteckte Betriebssystem.
-
-\section{Verstecktes Betriebssystem verschlüsseln (GPD) (TODO)}
 
 \chapter{VeraCrypt - Anhang}
 Hier werden alle Informationen oder Grafiken gezeigt, die den normalen Fluss im Dokument durch ihre Größe oder Form stören würden.
@@ -1016,7 +1017,7 @@ Um einen neuen Eintrag hinzuzufügen muss der Knopf mit dem Schlüsselsymbol ang
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/knewentry4.png}
+\includegraphics[width=350pt]{media/knewentry4.png}
 \caption{Zusätzliche Felder}
 \label{knewentry4}
 \end{center}
@@ -1031,7 +1032,7 @@ Um an die Daten eines Eintrags zu kommen muss nicht immer der Eintrag geöffnet 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/kautotype.png}
+\includegraphics[width=280pt]{media/kautotype.png}
 \caption{Auto-Type Muster ändern}
 \label{kautotype}
 \end{center}
@@ -1041,7 +1042,10 @@ Um an die Daten eines Eintrags zu kommen muss nicht immer der Eintrag geöffnet 
 
 \newpage
 
-\section{Nützliche Einstellungen (TODO)}
+\section{Nützliche Einstellungen}
+KeePass 2 bietet einige Optionen, um eine noch höhere Sicherheit zu gewährleisten. Um zu den Optionen zu gelangen, muss man unter \textbf{Extras} auf Optionen klicken. \\
+
+\noindent Bereits im ersten Tab befinden sich einige hilfreiche Einstellungen. Standardmäßig wird die Zwischenablage nach 12 Sekunden geleert, um versehentliches veröffentlichen der Passwörter zu vermeiden. Dieser Wert kann ohne Probleme etwas verringert werden, da die Zeit auf jeden Fall reicht. Weitere attraktive Optionen sind die automatische Sperrung der Datenbank bei KeePass- oder globaler Inaktivität. Dadurch wird verhindert, dass andere Personen die Passwörter am Rechner auslesen können, falls der Benutzer vergisst die Datenbank zu schließen.
 
 \part{Paranoia Text Encryption}
 
@@ -1062,17 +1066,19 @@ Um einen Text zu verschlüsseln, muss zunächst ein Passwort gewählt werden. Di
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte1.png}
+\includegraphics[width=350pt]{media/pte1.png}
 \caption{Passwort eingeben}
 \label{pte1}
 \end{center}
 \end{figure}
 
+\newpage
+
 \noindent Jetzt, wo das Passwort eingegeben wurde, kann der zu verschlüsselnde Text in das obere Feld eingegeben werden.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte2.png}
+\includegraphics[width=300pt]{media/pte2.png}
 \caption{Zu verschlüsselnden Text eingeben}
 \label{pte2}
 \end{center}
@@ -1082,48 +1088,46 @@ Um einen Text zu verschlüsseln, muss zunächst ein Passwort gewählt werden. Di
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte3.png}
+\includegraphics[width=300pt]{media/pte3.png}
 \caption{Text verschlüsseln}
 \label{pte3}
 \end{center}
 \end{figure}
+
+\newpage
 
 \section{Entschlüsselung eines Textes}
 Um einen verschlüsselten Text zu entschlüsseln, muss zunächst das Passwort eingegeben werden, das verwendet wurde, um den Text zu verschlüsseln.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte1.png}
+\includegraphics[width=300pt]{media/pte1.png}
 \caption{Passwort eingeben}
 \label{pte4}
 \end{center}
 \end{figure}
 
-\newpage
-
 \noindent Nachdem das Passwort eingegeben wurde, kann jetzt der zu entschlüsselnde Text in das untere Feld eingefügt werden.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte4.png}
+\includegraphics[width=300pt]{media/pte4.png}
 \caption{Zu entschlüsselnden Text eingeben}
 \label{pte5}
 \end{center}
 \end{figure}
 
+\newpage
+
 \noindent Damit der Text entschlüsselt wird, muss nun der Decrypt-Knopf gedrückt werden. Das Entschlüsseln dauert je nach Textlänge etwas länger. Wenn das Programm fertig ist, erscheint der entschlüsselte Text im oberen Textfeld und kann wieder gelesen werden.
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=220pt]{media/pte5.png}
+\includegraphics[width=350pt]{media/pte5.png}
 \caption{Text entschlüsseln}
 \label{pte6}
 \end{center}
 \end{figure}
-
-\section{Verstecken und verschlüsseln eines Textes in einem Bild (TODO)}
-
-\section{Extrahieren und entschlüsseln eines Textes aus einem Bild (TODO)}
 
 
 \part{S.S.E. File Encryptor}
@@ -1140,8 +1144,50 @@ Es ist sehr wichtig die Datei, welche verschlüsselt wurde, sicher zu löschen, 
 \chapter{S.S.E. File Encryptor - Praxis}
 Das Praxiskapitel zu diesem Programm beschränkt sich lediglich auf die Ver- und Entschlüsselung von Dateien, da das Programm nicht mehr Funktionen bietet.
 
-\section{Verschlüsselung einer Datei (TODO)}
+\section{Verschlüsselung einer Datei}
+Damit eine Datei verschlüsselt werden kann, muss erst einmal ein Passwort gewählt werden.
 
-\section{Entschlüsselung einer Datei (TODO)}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/sse1.png}
+\caption{Passwort eingeben}
+\label{sse1}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent Sobald das Passwort eingegeben wurde, kann jede beliebige Datei in den unteren Bereich gezogen werden. In diesem Bereich erscheinen die Informationen zu der Verschlüsselung.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/sse2.png}
+\caption{Datei verschlüsseln}
+\label{sse2}
+\end{center}
+\end{figure}
+
+\newpage
+
+\section{Entschlüsselung einer Datei}
+Die Entschlüsselung einer Datei ist genau so einfach, wie die Verschlüsselung. Es muss ebenfalls zunächst das Passwort für die Datei eingegeben werden.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/sse1.png}
+\caption{Passwort eingeben}
+\label{sse12}
+\end{center}
+\end{figure}
+
+\noindent Nun können verschlüsselte Dateien in den unteren Bereich gezogen werden. Dort stehen danach die Informationen zur Entschlüsselung der Dateien.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=300pt]{media/sse3.png}
+\caption{Datei entschlüsseln}
+\label{sse3}
+\end{center}
+\end{figure}
 
 \end{document}
