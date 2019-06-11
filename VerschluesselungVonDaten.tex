@@ -64,7 +64,7 @@ VeraCrypt ist eine Software, welche es einem Benutzer ermöglicht seine privaten
 Da VeraCrypt einen eigenen Treiber besitzt, der es ermöglicht, die Container oder Laufwerke einzubinden, muss es installiert werden, um den vollen Funktionsumfang zu bieten. Es gibt jedoch auch einen Portable-Modus. Dieser kann nur benutzt werden, wenn der Benutzer Administratorrechte besitzt. Sollte VeraCrypt auf dem Rechner installiert sein, kann auch ein Benutzer ohne Administratorrechte das Programm benutzen.
 
 \section{Verschlüsselungsalgorithmen}
-VeraCrypt bietet in der aktuellen Version (1.23) fünf verschiedene Verschlüsselungsmethoden. Dazu kommen noch Kaskaden dieser Methoden, wodurch es insgesamt 15 Möglichkeiten der Verschlüsselung gibt. Anhand eines Benchmarks kann festgestellt werden, welche Algorithmen besonders sicher sind. Sicher bedeutet in diesem Fall, dass die Daten langsam verschlüsselt werden. Können die Daten nur langsam verschlüsselt werden, dauert die Entschlüsselung ebenfalls lange.\\
+VeraCrypt bietet in der aktuellen Version (1.23-Hotfix-2) fünf verschiedene Verschlüsselungsmethoden. Dazu kommen noch Kaskaden dieser Methoden, wodurch es insgesamt 15 Möglichkeiten der Verschlüsselung gibt. Anhand eines Benchmarks kann festgestellt werden, welche Algorithmen besonders sicher sind. Sicher bedeutet in diesem Fall, dass die Daten langsam verschlüsselt werden. Können die Daten nur langsam verschlüsselt werden, dauert die Entschlüsselung ebenfalls lange.\\
 
 \begin{figure}[t]
 \begin{center}
@@ -1189,5 +1189,29 @@ Die Entschlüsselung einer Datei ist genau so einfach, wie die Verschlüsselung.
 \label{sse3}
 \end{center}
 \end{figure}
+
+
+\part{GPG4Win}
+
+\chapter{GPG4Win - Theorie}
+Im Gegensatz zu allen anderen Programmen, welche bereits behandelt wurden, bedient sich GPG der asymmetrischen Verschlüsselung. Diese Art der Verschlüsselung bietet den Vorteil, dass der Austausch eines Passworts nicht nötig ist. Ursprünglich wurde GPG für Linux entwickelt, doch die Benutzer erhalten durch GPG4Win die Möglichkeit auch unter Windows das mächtige Werkzeug GPG zu benutzen.
+
+\section{Funktionsweise asymmetrische Verschlüsselung}
+Das besondere an der asymmetrischen Verschlüsselung ist, dass die verschlüsselten Daten nicht mit dem selben Schlüssel entschlüsselt werden können, mit dem sie verschlüsselt wurden. Das Prinzip hinter dieser Methode besteht daraus, dass es einen öffentlichen und einen privaten Schlüssel gibt. Der öffentliche Schlüssel wird zum verschlüsseln verwendet und kann an alle weitergegeben werden, während der private Schlüssel zum entschlüsseln dient und auf keinen Fall weiter gegeben werden darf. Die beiden Schlüssel werden immer in Schlüsselpaaren erstellt, also zu genau einem privaten Schlüssel gehört auch genau ein öffentlicher Schlüssel.\\
+
+\noindent Möchte nun eine Person (Person 1) Daten verschlüsselt an eine andere Person (Person 2) senden, so muss Person 1 sich zunächst den öffentlichen Schlüssel von Person 2 holen. Diesen kann Person 1 entweder direkt von Person 2 bekommen, oder alternativ gibt es so genannte Keyserver, auf denen jede Person seinen eigenen öffentlichen Schlüssel veröffentlichen kann. Wenn Person 1 nun den öffentlichen Schlüssel von Person 2 hat, können die Daten verschlüsselt und an Person 2 geschickt werden. Niemand außer Person 2 kann diese Daten entschlüsseln, da niemand außer Person 2 den privaten Schlüssel besitzt. Wenn Person 1 eine Antwort erwartet, hat sie ihren öffentlichen Schlüssel zusammen mit den verschlüsselten Daten an Person 2 geschickt. Möchte Person 2 antworten, können nun Daten mit dem öffentlichen Schlüssel von Person 1 verschlüsselt werden und zurück geschickt werden. Diese zurückgeschickten Daten kann dann nur Person 1 lesen.
+
+\section{Signaturen}
+Eine weitere Funktion von GPG ist die Möglichkeit Daten zu signieren. Eine Signatur wird mit dem privaten Schlüssel unterschrieben und kann von anderen Personen mit dem dazugehörigem öffentlichen Schlüssel überprüft werden. Der Sinn hinter einer Signatur besteht darin, zu verifizieren, dass die erhaltenen Daten nicht manipuliert wurden. Eine andere Methode dieser Überprüfung ist die Bildung eines Hashes, welche aber nicht sicher ist, da der Hash ebenfalls manipuliert werden kann. Das kann bei einer Signatur nicht passieren, solange der private Schlüssel nicht veröffentlicht wird.
+
+\newpage
+
+\section{Web of Trust}
+Das Prinzip des Web of Trust ist ein System, welches die Glaubwürdigkeit und das Vertrauen anderer Benutzer mit einbezieht. Dieses System besagt, dass wenn einem Benutzer vertraut wird, andere Benutzter denen dieser Benutzer vertraut, man ebenfalls diesen anderen Benutzern vertrauen kann.\\
+
+\noindent Dieses Modell wird bei GPG auf die öffentlichen Schlüssel übertragen. Ein Schlüssel besitzt einen einzigartigen Fingerabdruck, der abgeglichen werden kann. Wird ein öffentlicher Schlüssel aus dem Internet bezogen und es gibt keinen stichfesten Beweis, dass dieser Schlüssel wirklich der Person gehört, für die sich der Ursprung des Schlüssels ausgibt, so sollte der angegebene Besitzer kontaktiert und nach dem Fingerabdruck gefragt werden. Stimmt dieser überein, handelt es sich um den richtigen Schlüssel.
+
+\section{Beglaubigungen}
+Damit nicht bei jedem Schlüssel der Besitzer kontaktiert werden muss, gibt es die Möglichkeit einen Schlüssel zu beglaubigen. Damit wird gesagt, dass dieser Schlüssel vertrauenswürdig ist und die Prüfung des Fingerabdrucks bereits stattgefunden hat. Dennoch sollte darauf geachtet werden, wer diesen Schlüssel beglaubigt hat. Hier greift erneut das Prinzip des Web of Trust. Wenn vertrauenswürdige Quellen einen Schlüssel beglaubigen, kann in den meisten Fällen davon ausgegangen werden, dass es sich um keinen gefälschten Schlüssel handelt. Doch auch in solchen Fällen kann eine zusätzliche eigene Prüfung nicht schaden.
 
 \end{document}

@@ -65,3 +65,9 @@
 \contentsline {chapter}{\numberline {10}S.S.E. File Encryptor - Praxis}{61}{chapter.10}% 
 \contentsline {section}{\numberline {10.1}Verschl\IeC {\"u}sselung einer Datei}{61}{section.10.1}% 
 \contentsline {section}{\numberline {10.2}Entschl\IeC {\"u}sselung einer Datei}{63}{section.10.2}% 
+\contentsline {part}{\numberline {V}GPG4Win}{64}{part.5}% 
+\contentsline {chapter}{\numberline {11}GPG4Win - Theorie}{65}{chapter.11}% 
+\contentsline {section}{\numberline {11.1}Funktionsweise asymmetrische Verschl\IeC {\"u}sselung}{65}{section.11.1}% 
+\contentsline {section}{\numberline {11.2}Signaturen}{65}{section.11.2}% 
+\contentsline {section}{\numberline {11.3}Web of Trust}{66}{section.11.3}% 
+\contentsline {section}{\numberline {11.4}Beglaubigungen}{66}{section.11.4}% 
